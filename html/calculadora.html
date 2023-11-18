@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1>Mi calculadora</h1>
+    </header>
+    <nav>
+
+    </nav>
+    <section>
+        <label for="idNumero1">Número 1</label>
+        <input type="number" id="idNumero1">
+        <label for="idNumero2">Número 2</label>
+        <input type="number" id="idNumero2">
+
+        <button onclick="document.getElementById('idNumero1').style.color='blue'">Cambiar estilo 1</button>
+        <button onclick="document.getElementById('idNumero2').style.background='red'">Cambiar estilo 2</button>
+        <button onclick="document.getElementById('idResultado').innerHTML=1+6">Presentar resultados</button>
+        <button onclick="document.getElementById('idDiv').innerHTML='<button>Hola</button>'">Agregar elemento</button>
+        <label id="idResultado" for=""></label>
+        <div id="idDiv"></div>
+
+        <section>
+            <img src="https://media1.giphy.com/media/JZLaL7vxYBMwOw4Vjd/giphy.gif" alt="No found" id="imagen1">
+            <button onclick="document.getElementById('imagen1').src='https://media.tenor.com/fqDzKdvLIhYAAAAj/dinosaur-dancing-dino.gif'">cambiar imagen</button>
+        </section>f
+       
+    </section>
+    <footer>
+        Todos los derechos reservados
+    </footer>
+    
+</body>
+</html>
