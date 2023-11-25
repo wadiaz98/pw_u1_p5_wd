@@ -1,57 +1,47 @@
-// Obtén los elementos de los botones y el campo de respuesta
-const btnSuma = document.getElementById('idSuma');
-const btnResta = document.getElementById('idResta');
-const btnMultiplicacion = document.getElementById('idMultiplicacion');
-const btnDivision = document.getElementById('idDivision');
-const btnResultado = document.getElementById('idRespuestaR');
-const txtResultado = document.getElementById('idRespuesta');
+let numX = [];
+let operador = "";
+let numY = [];
 
-// Asigna la función de suma al botón de suma
-btnSuma.addEventListener('click', function() {
-  // Obtiene los valores actuales del campo de respuesta y del botón presionado
-  const valor = parseFloat(txtResultado.value);
-  const operator = this.innerHTML;
-  
-  // Realiza la operación y actualiza el campo de respuesta
-  txtResultado.value = valor + operator;
-});
+const obtenerCantidad = (tmp) =>{ 
+    console.log(tmp)
+    if(operador === "" ){
+        if( Number.isInteger(tmp) ) { numX.push(tmp)}
+        else if( typeof tmp === "string") { operador = tmp }
+    }else{
+        if( Number.isInteger(tmp)){ numY.push(tmp)}
+        
+        let x = parseInt( numX.join("") );
+        let y = parseInt(numY.join(""))
+        let resultado=0;
+        switch (operador){
+            case "+": 
+                resultado = x+y;
+            break;
+            case "-": 
+                resultado = x-y;
+            break;
+            case "*": 
+                resultado = x*y;
+            break;
+            case "/": 
+                resultado = x/y;
+            break;
+        }
+        document.getElementById('idResultado').innerText = resultado;
+        
+        if(tmp==='R'){
+            console.log("entró");
+            resetearVariables();
+        }
+    }
+}
 
-// Asigna la función de resta al botón de resta
-btnSubtract.addEventListener('click', function() {
-  // Obtiene los valores actuales del campo de respuesta y del botón presionado
-  const currentValue = parseFloat(resultField.value);
-  const operator = this.innerHTML;
-  
-  // Realiza la operación y actualiza el campo de respuesta
-  resultField.value = currentValue + operator;
-});
-
-// Asigna la función de multiplicación al botón de multiplicación
-btnMultiply.addEventListener('click', function() {
-  // Obtiene los valores actuales del campo de respuesta y del botón presionado
-  const currentValue = parseFloat(resultField.value);
-  const operator = this.innerHTML;
-  
-  // Realiza la operación y actualiza el campo de respuesta
-  resultField.value = currentValue + operator;
-});
-
-// Asigna la función de división al botón de división
-btnDivide.addEventListener('click', function() {
-  // Obtiene los valores actuales del campo de respuesta y del botón presionado
-  const currentValue = parseFloat(resultField.value);
-  const operator = this.innerHTML;
-  
-  // Realiza la operación y actualiza el campo de respuesta
-  resultField.value = currentValue + operator;
-});
-
-// Asigna la función de igual al botón de igual
-btnEquals.addEventListener('click', function() {
-  // Evalúa la expresión matemática en el campo de respuesta usando la función eval()
-  const expression = resultField.value;
-  const answer = eval(expression);
-  
-  // Actualiza el campo de respuesta con el resultado
-  resultField.value = answer;
-});
+const resetearVariables = () => {
+    numX= [];
+    numY= [];
+    operador= "";
+    resultado= 0;
+    x= 0;
+    y= 0;
+    document.getElementById('idResultado').innerText = "";
+}
