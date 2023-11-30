@@ -5,13 +5,17 @@ let numY = [];
 const obtenerCantidad = (tmp) =>{ 
     console.log(tmp)
     if(operador === "" ){
-        if( Number.isInteger(tmp) ) { numX.push(tmp)}
+        if( Number.isInteger(tmp) ) { numX.push(tmp)
+            document.getElementById('idResultado').innerText = numX;}
+            
         else if( typeof tmp === "string") { operador = tmp }
+        document.getElementById('idResultado').innerText += tmp;
     }else{
         if( Number.isInteger(tmp)){ numY.push(tmp)}
         
         let x = parseInt( numX.join("") );
         let y = parseInt(numY.join(""))
+    
         let resultado=0;
         switch (operador){
             case "+": 
@@ -27,7 +31,7 @@ const obtenerCantidad = (tmp) =>{
                 resultado = x/y;
             break;
         }
-        document.getElementById('idResultado').innerText = resultado;
+        document.getElementById('idResultado').innerText += numY +" = " + resultado;
         
         if(tmp==='R'){
             console.log("entró");
