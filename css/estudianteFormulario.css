@@ -50,6 +50,7 @@ input:focus{
     display: flex;
     justify-content: center;
     align-items: center;
+    size: 50px;
 }
 
 header{
