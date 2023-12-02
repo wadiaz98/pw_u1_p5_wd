@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../css/calculadoraBotones.css">
+    <script src = "../js/funcionalidad.js">
+
+    </script>
 </head>
 <body>
     <header>
@@ -18,26 +21,26 @@
         <div class="container">
             <div class="calculadora">
                 <div class="display">
-                    Resultado
+                    <label id="idResultado" for=""></label>
                 </div>
-                <button id="idC">C</button>
-                <button id="idFlecha">&#10229;</button>
-                <button id="idPorcentaje">&#37;</button>
-                <button id="idSiete">7</button>
-                <button id="idOcho">8</button>
-                <button id="idNueve">9</button>
-                <button id="idX">x</button>
-                <button id="idCuatro">4</button>
-                <button id="idCinco">5</button>
-                <button id="idSeis">6</button>
-                <button id="idMenos">&#8722;</button>
-                <button id="idUno">1</button>
-                <button id="idDos">2</button>
-                <button id="idTres">3</button>
-                <button id="idMas">&#43;</button>
-                <button id="idCero">0</button>
-                <button id="idPunto">.</button>
-                <button id="idIgual">&#61;</button>
+                <button id="idC" class="btn_2" onclick="obtenerCantidad('R')">C</button>
+                <button id="idFlecha" onclick="obtenerCantidad('R')">&#10229;</button>
+                <button id="idPorcentaje" onclick="obtenerCantidad('/')">/</button>
+                <button id="idSiete" onclick="obtenerCantidad(7)">7</button>
+                <button id="idOcho" onclick="obtenerCantidad(8)">8</button>
+                <button id="idNueve" onclick="obtenerCantidad(9)">9</button>
+                <button id="idX" onclick="obtenerCantidad('*')">x</button>
+                <button id="idCuatro" onclick="obtenerCantidad(4)">4</button>
+                <button id="idCinco" onclick="obtenerCantidad(5)">5</button>
+                <button id="idSeis" onclick="obtenerCantidad(6)">6</button>
+                <button id="idMenos" onclick="obtenerCantidad('-')">&#8722;</button>
+                <button id="idUno" onclick="obtenerCantidad(1)">1</button>
+                <button id="idDos" onclick="obtenerCantidad(2)">2</button>
+                <button id="idTres" onclick="obtenerCantidad(3)">3</button>
+                <button id="idMas" onclick="obtenerCantidad('+')">&#43;</button>
+                <button id="idCero" class="btn_2" onclick="obtenerCantidad(0)">0</button>
+                <button id="idPunto" onclick="obtenerCantidad('.')">.</button>
+                <button id="idIgual" onclick="obtenerCantidad('=')">&#61;</button>
             </div>
         </div>
     </section>
