@@ -5,7 +5,7 @@ const estudiantes = [{nombre:'Willan', apellido:'Diaz'},
 {nombre:'Alexander', apellido:'Cordova'},
 {nombre:'Maria', apellido:'Perez'},
 {nombre:'Luis', apellido:'Loor'},
-{nombre:'Fernando', apellido:'Segovia'}]
+{nombre:'', apellido:'Segovia'}]
 
 console.log(estudiantes)
 console.table(estudiantes)
@@ -39,10 +39,16 @@ const app = Vue.createApp({
       /*this.lista.unshift(estu) */
       this.lista.push({nombre: this.nombre, apellido:this.apellido})
     },
-    pesionandoTecla(event){
-      if(event.charCode ===13){
+    pesionandoTecla({charCode}){
+      if(charCode ===13){
         this.agregarEstudiante()
       }
+    },
+
+    pesionandoTeclaModificador(){
+      console.log("presionando2....")
+      this.agregarEstudiante()
+      console.log(this.nombre)
     }
   },
   watch: {},
