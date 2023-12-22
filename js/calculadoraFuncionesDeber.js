@@ -2,13 +2,17 @@ let numX = [];
 let operador = "";
 let numY = [];
 
+
 const obtenerCantidad = (tmp) =>{ 
     console.log(tmp)
     if(operador === "" ){
-        if( Number.isInteger(tmp) ) { numX.push(tmp)}
+        document.getElementById('idResultado').innerText = document.getElementById('idResultado').innerText + tmp;
+        if( Number.isInteger(tmp) ) 
+        { numX.push(tmp)}
         else if( typeof tmp === "string") { operador = tmp }
     }else{
-        if( Number.isInteger(tmp)){ numY.push(tmp)}
+        if( Number.isInteger(tmp))
+        { numY.push(tmp)}
         
         let x = parseInt( numX.join("") );
         let y = parseInt(numY.join(""))
@@ -27,7 +31,8 @@ const obtenerCantidad = (tmp) =>{
                 resultado = x/y;
             break;
         }
-        document.getElementById('idResultado').innerText = resultado;
+
+         document.getElementById('idResultado').innerText = document.getElementById('idResultado').innerText + tmp + ' = ' + resultado;
         
         if(tmp==='R'){
             console.log("entró");
